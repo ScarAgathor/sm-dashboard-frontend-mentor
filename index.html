@@ -4,63 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>social media dashboard with theme switcher</title>
-    <link rel="stylesheet" href="initial.css">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="app.js" defer></script>
 </head>
-<body>
+<body class="body--dark" data-theme="dark">
+    <!-- the data theme will be used to control everything.
+     two functions for each theme that changes the light and dark based on some conditions. Should work wit5h prefer color scheme check in js and toggle button. It toggle is dark or pfs is dark. data-theme shud be dark and Dark function id caslled and vice versa. -->
+    <!-- Dark is default mode -->
 
     <header>
         <div class="heading">
-            <h1 class="heading__title"></h1>
-            <p class="heading__text"></p>
+            <h1 class="heading__title heading__title--dark" data-heading-title>Social Media Dashboard</h1> 
+            <p class="heading__text heading__text--dark" data-heading-text="">Total Followers: 23,004</p>
         </div>
 
         <div class="theme">
-            <p class="theme__name" data-theme-name></p>
+            <p class="theme__name theme__name--dark" data-theme-name>Dark Mode</p>
 
             <label for="check" class="theme__switcher">
-                <input type="checkbox" id="check">
+                <input type="checkbox" id="check"> <!-- If unchecked it is dark -->
                 <span></span>
             </label>
         </div>
     </header>
 
     <main>
-        <section>
-            <div>
-                <p><span></span></p>
-                <p></p>
-                <p></p>
-                <p><span></span></p>
+        <section class="account__section">
+            <div class="account account--dark account--facebook" data-followers>
+                <p class="account__username account__username--dark" data-username><img src="images/icon-facebook.svg" alt=""><span>@nathanf</span></p>
+                <p class="account__value account__value--dark" data-followers-value>1987</p>
+                <p class="account__logo account__logo--dark" data-followers-logo>Followers</p>
+                <p class="performance performance--green"><img src="images/icon-up.svg" alt=""><span>12 Today</span></p>
             </div>
-            <div>
-
+            
+            <div class="account account--dark account--twitter" data-followers>
+                <p class="account__username account__username--dark" data-username><img src="images/icon-twitter.svg" alt=""><span>@nathanf</span> </p>
+                <p class="account__value account__value--dark" data-followers-value>1044</p>
+                <p class="account__logo account__logo--dark" data-followers-logo>Followers</p>
+                <p class="performance performance--green"><img src="images/icon-up.svg" alt="">99 Today</p>
             </div>
-            <div>
 
+            <div class="account account--dark account--instagram" data-followers>
+                <p class="account__username account__username--dark" data-username><img src="images/icon-instagram.svg" alt=""><span>@realnathanf</span></p>
+                <p class="account__value account__value--dark" data-followers-value>11k</p>
+                <p class="account__logo account__logo--dark" data-followers-logo>Followers</p>
+                <p class="performance performance--green"><img src="images/icon-up.svg" alt="">1099 Today</p>
             </div>
-            <div>
 
+            <div class="account account--dark account--youtube" data-followers>
+                <p class="account__username account__username--dark" data-username><img src="images/icon-youtube.svg" alt=""><span>Nathan F.</span></p>
+                <p class="account__value account__value--dark" data-followers-value>8239</p>
+                <p class="account__logo account__logo--dark" data-followers-logo>Followers</p>
+                <p class="performance performance--red"><img src="images/icon-down.svg" alt="">144 Today</p>
             </div>
         </section>
 
         <section>
 
-            <h2>
+            <h2>Overview - Today</h2>
+            
+            <div class="stat__grid">
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Page Views</p>
+                        <img src="images/icon-facebook.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">87</p>
+                        <p class="performance performance--red"><img src="images/icon-up.svg" alt="">3%</p>
+                    </div>
+                </div>
 
-            </h2>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Likes</p>
+                        <img src="images/icon-facebook.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">52</p>
+                        <p class="performance performance--red"><img src="images/icon-down.svg" alt="">2%</p>
+                    </div>
+                </div>
+
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Likes</p>
+                        <img src="images/icon-instagram.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">5462</p>
+                        <p class="performance performance--red"><img src="images/icon-up.svg" alt="">2257%</p>
+                    </div>
+                </div>
+                
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Profile Views</p>
+                        <img src="images/icon-instagram.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">52k</p>
+                        <p class="performance performance--red"><img src="images/icon-up.svg" alt="">1375%</p>
+                    </div>
+                </div>
+
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Retweets</p>
+                        <img src="images/icon-twitter.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">117</p>
+                        <p class="performance performance--red"><img src="images/icon-up.svg" alt="">303%</p>
+                    </div>
+                </div>
+
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Likes</p>
+                        <img src="images/icon-twitter.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">507</p>
+                        <p class="performance performance--red"><img src="images/icon-up.svg" alt="">553%</p>
+                    </div>
+                </div>
+
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Likes</p>
+                        <img src="images/icon-youtube.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">107</p>
+                        <p class="performance performance--red"><img src="images/icon-down.svg" alt="">19%</p>
+                    </div>
+                </div>
+
+                <div class="stat stat-dark">
+                    <div class="stat__row">
+                        <p class="stat__title stat__title--dark">Total Views</p>
+                        <img src="images/icon-youtube.svg" alt="" class="stat__icon">
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__value stat__value--dark">1407</p>
+                        <p class="performance performance--red"><img src="images/icon-down.svg" alt="">12%</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
 </body>
 </html>
+
+<!-- 
+Things used
+
+sass
+prefer-color-scheme
+BEM
+
+-->
