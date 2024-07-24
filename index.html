@@ -8,10 +8,6 @@
     <script src="app.js" defer></script>
 </head>
 <body class="body--dark" data-theme="dark">
-    <!-- the data theme will be used to control everything.
-     two functions for each theme that changes the light and dark based on some conditions. Should work wit5h prefer color scheme check in js and toggle button. It toggle is dark or pfs is dark. data-theme shud be dark and Dark function id caslled and vice versa. -->
-    <!-- Dark is default mode -->
-
     <header>
         <div class="heading">
             <h1 class="heading__title heading__title--dark" data-heading-title>Social Media Dashboard</h1> 
@@ -22,9 +18,8 @@
 
         <div class="theme">
             <p class="theme__name theme__name--dark" data-theme-name>Dark Mode</p>
-
             <label for="check" class="theme__switcher">
-                <input type="checkbox" id="check"> <!-- If unchecked it is dark -->
+                <input type="checkbox" id="check"> <!-- If checked is false, it is dark -->
                 <span></span>
             </label>
         </div>
@@ -33,37 +28,37 @@
     <main>
         <section class="account__section">
             <div class="account--facebook">
-                <div class="account account--dark" tabindex="0" data-followers>
-                    <p class="account__username account__username--dark" data-username><img src="images/icon-facebook.svg" alt=""><span>@nathanf</span></p>
-                    <p class="account__value account__value--dark" data-followers-value>1987</p>
-                    <p class="account__logo account__logo--dark" data-followers-logo>FOLLOWERS</p>
+                <div class="account account--dark" tabindex="0" data-account>
+                    <p class="account__username account__username--dark" data-account-username><img src="images/icon-facebook.svg" alt=""><span>@nathanf</span></p>
+                    <p class="account__value account__value--dark" data-account-value>1987</p>
+                    <p class="account__logo account__logo--dark" data-account-logo>FOLLOWERS</p>
                     <p class="performance performance--green"><img src="images/icon-up.svg" alt=""><span>12 Today</span></p>
                 </div>
             </div>
             
             <div class="account--twitter">
-                <div class="account account--dark" tabindex="0" data-followers>
-                    <p class="account__username account__username--dark" data-username><img src="images/icon-twitter.svg" alt=""><span>@DidiAbby</span> </p>
-                    <p class="account__value account__value--dark" data-followers-value>1044</p>
-                    <p class="account__logo account__logo--dark" data-followers-logo>FOLLOWERS</p>
+                <div class="account account--dark" tabindex="0" data-account>
+                    <p class="account__username account__username--dark" data-account-username><img src="images/icon-twitter.svg" alt=""><span>@DidiAbby</span> </p>
+                    <p class="account__value account__value--dark" data-account-value>1044</p>
+                    <p class="account__logo account__logo--dark" data-account-logo>FOLLOWERS</p>
                     <p class="performance performance--green"><img src="images/icon-up.svg" alt="">99 Today</p>
                 </div>
             </div>
             
             <div class="account--instagram">
-                <div class="account account--dark" tabindex="0" data-followers>
-                    <p class="account__username account__username--dark" data-username><img src="images/icon-instagram.svg" alt=""><span>@Eddie</span></p>
-                    <p class="account__value account__value--dark" data-followers-value>11k</p>
-                    <p class="account__logo account__logo--dark" data-followers-logo>FOLLOWERS</p>
+                <div class="account account--dark" tabindex="0" data-account>
+                    <p class="account__username account__username--dark" data-account-username><img src="images/icon-instagram.svg" alt=""><span>@Eddie</span></p>
+                    <p class="account__value account__value--dark" data-account-value>11k</p>
+                    <p class="account__logo account__logo--dark" data-account-logo>FOLLOWERS</p>
                     <p class="performance performance--green"><img src="images/icon-up.svg" alt="">1099 Today</p>
                 </div>
             </div>
             
             <div class="account--youtube">
-                <div class="account account--dark" tabindex="0" data-followers>
-                    <p class="account__username account__username--dark" data-username><img src="images/icon-youtube.svg" alt=""><span>Charles</span></p>
-                    <p class="account__value account__value--dark" data-followers-value>8239</p>
-                    <p class="account__logo account__logo--dark" data-followers-logo>FOLLOWERS</p>
+                <div class="account account--dark" tabindex="0" data-account>
+                    <p class="account__username account__username--dark" data-account-username><img src="images/icon-youtube.svg" alt=""><span>Charles</span></p>
+                    <p class="account__value account__value--dark" data-account-value>8239</p>
+                    <p class="account__logo account__logo--dark" data-account-logo>FOLLOWERS</p>
                     <p class="performance performance--red"><img src="images/icon-down.svg" alt="">144 Today</p>
                 </div>
             </div>
@@ -171,8 +166,9 @@
 <!-- 
 Things used
 
-sass
-prefer-color-scheme
+scss
+prefer-color-scheme in js logic
 BEM
+JS
 
 -->

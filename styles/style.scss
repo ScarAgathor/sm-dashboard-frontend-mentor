@@ -9,8 +9,10 @@
     border-radius: 5px;
 }
 
+// Add background image from figma on body
+
 $body-bg-dark: #20222f;
-$body-bg-light: #f7f9ff;
+$body-bg-light: #ffffff;
 $card-bg-dark: #252b42;
 $card-bg-dark-interact: #333a55;
 $card-bg-light: #f1f3fa;
@@ -173,8 +175,6 @@ main {
     gap: 46px;
 }
 
-// Remember to change gap on account grid in media query
-
 .account__section {
     display: grid;
     gap: 24px;
@@ -214,7 +214,6 @@ main {
         letter-spacing: 5px;
         margin-bottom: 25px;
     }
-
 }
 
 .account--dark {
@@ -303,7 +302,7 @@ main {
 }
 
 .stat__heading--light {
-    color: $text-LText-light;
+    color: $text-sText-light;
 }
 
 .stat__grid {
@@ -354,10 +353,6 @@ main {
     background-color: $card-bg-dark-interact;
 }
 
-.stat--light:hover, .stat--light:focus {
-    background-color: $card-bg-light-interact;
-}
-
 .stat--light {
     background-color: $card-bg-light;
 
@@ -368,4 +363,8 @@ main {
     .stat__value--light {
         color: $text-LText-light;
     }
+}
+
+.stat--light:hover, .stat--light:focus {
+    background-color: $card-bg-light-interact;
 }

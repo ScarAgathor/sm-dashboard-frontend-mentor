@@ -41,7 +41,7 @@ body {
 }
 
 .body--light {
-  background-color: #f7f9ff;
+  background-color: #ffffff;
 }
 
 header {
@@ -297,7 +297,7 @@ main {
 }
 
 .stat__heading--light {
-  color: #1d1f29;
+  color: #63687d;
 }
 
 .stat__grid {
@@ -344,10 +344,6 @@ main {
   background-color: #333a55;
 }
 
-.stat--light:hover, .stat--light:focus {
-  background-color: #e1e4f0;
-}
-
 .stat--light {
   background-color: #f1f3fa;
 }
@@ -356,4 +352,8 @@ main {
 }
 .stat--light .stat__value--light {
   color: #1d1f29;
+}
+
+.stat--light:hover, .stat--light:focus {
+  background-color: #e1e4f0;
 }/*# sourceMappingURL=style.css.map */
