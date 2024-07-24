@@ -1,25 +1,5 @@
 @use 'initial' as *;
 
-// @media (prefers-color-scheme: dark) {
-
-//     h1 {
-//         color: red;
-//     }
-    
-// }
-
-// @media (prefers-color-scheme: light) {
-
-//     h1 {
-//         color: red;
-//     }
-    
-// }
-
-// Remember to add media queries with media query scss function to each of the important elements
-
-// Also go through and fix gaps, font sizes, paddings, margins, etc, i.e make them responsive
-
 @mixin accountBackground($bgColor) {
     display: flex;
     flex-direction: column;
@@ -32,7 +12,9 @@
 $body-bg-dark: #20222f;
 $body-bg-light: #f7f9ff;
 $card-bg-dark: #252b42;
+$card-bg-dark-interact: #333a55;
 $card-bg-light: #f1f3fa;
+$card-bg-light-interact: #e1e4f0;
 $text-LText-dark: #ffffff;
 $text-LText-light: #1d1f29;
 $text-sText-dark: #8c98c6;
@@ -43,7 +25,7 @@ $progress-text-green: #1eb589;
 body {
     width: 100%;
     height: 100vh;
-    padding: 36px 25px;
+    padding: 36px clamp(25px, 7vw, 160px);
 }
 
 .body--dark {
@@ -65,7 +47,7 @@ header {
         gap: 4px;
     
         &__title {
-            font: 24px BOLD;
+            font: clamp(24px, 6.4vw, 28px) BOLD;
         }
     
         &__title--dark{
@@ -106,6 +88,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 13px;
 
         &__name {
             font: 14px BOLD;
@@ -128,8 +111,8 @@ header {
 
             input {
                 position: absolute;
-                z-index: -2;
-                top: 10px;
+                z-index: -1;
+                top: 7px;
                 left: 50%;
             }
 
@@ -144,6 +127,10 @@ header {
             input:checked + span::before {
                 background-color: #ffffff;
                 transform: translateX(24px);
+            }
+
+            input:checked + span:hover {
+                background: linear-gradient(#40d882, #388fe7);
             }
 
             span {
@@ -170,6 +157,15 @@ header {
             }
         }
     }
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        
+        .line__division {
+            display: none;
+        }
+    }
 }
 
 main {
@@ -182,6 +178,10 @@ main {
 .account__section {
     display: grid;
     gap: 24px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .account {
@@ -206,6 +206,7 @@ main {
 
     &__value {
         font: 56px BOLD;
+        letter-spacing: -2px;
     }
 
     &__logo {
@@ -232,6 +233,10 @@ main {
     }
 }
 
+.account--dark:hover, .account--dark:focus {
+    background-color: $card-bg-dark-interact;
+}
+
 .account--light {
     background-color: $card-bg-light;
 
@@ -246,6 +251,10 @@ main {
     .account__logo--light {
         color: $text-sText-light;
     }
+}
+
+.account--light:hover, .account--light:focus {
+    background-color: $card-bg-light-interact
 }
 
 .account--facebook {
@@ -300,6 +309,11 @@ main {
 .stat__grid {
     display: grid;
     gap: 16px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
 }
 
 .stat {
@@ -307,6 +321,7 @@ main {
     border-radius: 5px;
     display: grid;
     gap: 21px;
+    cursor: pointer;
 
     &__row {
         display: flex;
@@ -333,6 +348,14 @@ main {
     .stat__value--dark {
         color: $text-LText-dark;
     }
+}
+
+.stat--dark:hover, .stat--dark:focus {
+    background-color: $card-bg-dark-interact;
+}
+
+.stat--light:hover, .stat--light:focus {
+    background-color: $card-bg-light-interact;
 }
 
 .stat--light {

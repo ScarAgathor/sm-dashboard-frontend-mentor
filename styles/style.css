@@ -33,7 +33,7 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
   width: 100%;
   height: 100vh;
-  padding: 36px 25px;
+  padding: 36px clamp(25px, 7vw, 160px);
 }
 
 .body--dark {
@@ -55,7 +55,7 @@ header .heading {
   gap: 4px;
 }
 header .heading__title {
-  font: 24px BOLD;
+  font: clamp(24px, 6.4vw, 28px) BOLD;
 }
 header .heading__title--dark {
   color: #ffffff;
@@ -86,6 +86,7 @@ header .theme {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 13px;
 }
 header .theme__name {
   font: 14px BOLD;
@@ -105,8 +106,8 @@ header .theme__switcher {
 }
 header .theme__switcher input {
   position: absolute;
-  z-index: -2;
-  top: 10px;
+  z-index: -1;
+  top: 7px;
   left: 50%;
 }
 header .theme__switcher input:focus + span {
@@ -118,6 +119,9 @@ header .theme__switcher input:checked + span {
 header .theme__switcher input:checked + span::before {
   background-color: #ffffff;
   transform: translateX(24px);
+}
+header .theme__switcher input:checked + span:hover {
+  background: linear-gradient(#40d882, #388fe7);
 }
 header .theme__switcher span {
   width: 100%;
@@ -140,6 +144,15 @@ header .theme__switcher span::before {
   top: 3px;
   transition: 0.3s;
 }
+@media screen and (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header .line__division {
+    display: none;
+  }
+}
 
 main {
   display: grid;
@@ -149,6 +162,11 @@ main {
 .account__section {
   display: grid;
   gap: 24px;
+}
+@media screen and (min-width: 768px) {
+  .account__section {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .account {
@@ -171,6 +189,7 @@ main {
 }
 .account__value {
   font: 56px BOLD;
+  letter-spacing: -2px;
 }
 .account__logo {
   font: 12px REGULAR;
@@ -191,6 +210,10 @@ main {
   color: #8c98c6;
 }
 
+.account--dark:hover, .account--dark:focus {
+  background-color: #333a55;
+}
+
 .account--light {
   background-color: #f1f3fa;
 }
@@ -202,6 +225,10 @@ main {
 }
 .account--light .account__logo--light {
   color: #63687d;
+}
+
+.account--light:hover, .account--light:focus {
+  background-color: #e1e4f0;
 }
 
 .account--facebook {
@@ -277,12 +304,19 @@ main {
   display: grid;
   gap: 16px;
 }
+@media screen and (min-width: 768px) {
+  .stat__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
 
 .stat {
   padding: 24px;
   border-radius: 5px;
   display: grid;
   gap: 21px;
+  cursor: pointer;
 }
 .stat__row {
   display: flex;
@@ -304,6 +338,14 @@ main {
 }
 .stat--dark .stat__value--dark {
   color: #ffffff;
+}
+
+.stat--dark:hover, .stat--dark:focus {
+  background-color: #333a55;
+}
+
+.stat--light:hover, .stat--light:focus {
+  background-color: #e1e4f0;
 }
 
 .stat--light {
