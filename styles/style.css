@@ -34,14 +34,31 @@ body {
   width: 100%;
   height: 100vh;
   padding: 36px clamp(25px, 7vw, 160px);
+  position: relative;
+}
+body .body__bg {
+  position: absolute;
+  width: 100%;
+  height: 230px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
 
 .body--dark {
+  background-color: #1d1f29;
+}
+.body--dark .body__bg--dark {
   background-color: #20222f;
 }
 
 .body--light {
   background-color: #ffffff;
+}
+.body--light .body__bg--light {
+  background-color: #f7f9ff;
 }
 
 header {
@@ -172,8 +189,8 @@ main {
 .account {
   display: grid;
   justify-content: center;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   padding: 28px 0 24px 0;
   text-align: center;
 }
@@ -238,6 +255,8 @@ main {
   background: #1da1f2;
   height: 227px;
   border-radius: 5px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .account--twitter {
@@ -247,6 +266,9 @@ main {
   background: #1da1f2;
   height: 227px;
   border-radius: 5px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  height: 224px;
 }
 
 .account--instagram {
@@ -256,6 +278,8 @@ main {
   background: linear-gradient(90deg, #df4896 0%, #ee877e 51%, #fdc366 100%);
   height: 227px;
   border-radius: 5px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .account--youtube {
@@ -265,6 +289,8 @@ main {
   background: #c4032b;
   height: 227px;
   border-radius: 5px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .performance {

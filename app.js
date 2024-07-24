@@ -1,6 +1,7 @@
 const theme = window.matchMedia("(prefers-color-scheme: dark)");
-const body = document.querySelector('[data-theme]');
+const body = document.querySelector('[data-body-theme]');
 const themeButton = document.getElementById('check');
+const bodyBg = document.querySelector('[data-bg-body');
 const themeName = document.querySelector('[data-theme-name]');
 const headingTitle = document.querySelector('[data-heading-title]');
 const headingText = document.querySelector('[data-heading-text]');
@@ -14,7 +15,7 @@ const statTitle = document.querySelectorAll('[data-stat-title');
 const statValue = document.querySelectorAll('[data-stat-value]');
 
 window.onload = () => {
-    // Theme switching Logic for page load
+    // Theme switching Logic for on page load
     if(theme.matches) {
         setDarkTheme();
         themeButton.checked = false;
@@ -33,11 +34,11 @@ themeButton.addEventListener('click', () => {
     }
 })
 
-
-
 function setDarkTheme() {
     body.classList.add('body--dark');
     body.classList.remove('body--light');
+    bodyBg.classList.add('body__bg--dark');
+    bodyBg.classList.remove('body__bg--light');
     headingTitle.classList.add('heading__title--dark');
     headingTitle.classList.remove('heading__title--light');
     headingText.classList.add('heading__text--dark');
@@ -72,6 +73,8 @@ function setDarkTheme() {
 function setLightTheme() {
     body.classList.remove('body--dark');
     body.classList.add('body--light');
+    bodyBg.classList.remove('body__bg--dark');
+    bodyBg.classList.add('body__bg--light');
     headingTitle.classList.remove('heading__title--dark');
     headingTitle.classList.add('heading__title--light');
     headingText.classList.remove('heading__text--dark');
@@ -102,9 +105,3 @@ function setLightTheme() {
         statValue[i].classList.add('stat__value--light');
     }
 }
-
-
-
-
-
-

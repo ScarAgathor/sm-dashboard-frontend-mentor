@@ -7,11 +7,11 @@
     background: $bgColor;
     height: 227px;
     border-radius: 5px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
-// Add background image from figma on body
-
-$body-bg-dark: #20222f;
+$body-bg-dark: #1d1f29;
 $body-bg-light: #ffffff;
 $card-bg-dark: #252b42;
 $card-bg-dark-interact: #333a55;
@@ -28,14 +28,34 @@ body {
     width: 100%;
     height: 100vh;
     padding: 36px clamp(25px, 7vw, 160px);
+    position: relative;
+
+    .body__bg {
+        position: absolute;
+        width: 100%;
+        height: 230px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
 }
 
 .body--dark {
     background-color: $body-bg-dark;
+
+    .body__bg--dark {
+        background-color: #20222f;
+    }
 }
 
 .body--light {
     background-color: $body-bg-light;
+
+    .body__bg--light {
+        background-color: #f7f9ff;
+    }
 }
 
 header {
@@ -187,8 +207,8 @@ main {
 .account {
     display: grid;
     justify-content: center;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding: 28px 0 24px 0;
     text-align: center;
 
@@ -262,6 +282,7 @@ main {
 
 .account--twitter {
     @include accountBackground(#1da1f2);
+    height: 224px;
 }
 
 .account--instagram {
