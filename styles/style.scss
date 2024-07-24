@@ -1,3 +1,348 @@
 @use 'initial' as *;
 
+// @media (prefers-color-scheme: dark) {
 
+//     h1 {
+//         color: red;
+//     }
+    
+// }
+
+// @media (prefers-color-scheme: light) {
+
+//     h1 {
+//         color: red;
+//     }
+    
+// }
+
+// Remember to add media queries with media query scss function to each of the important elements
+
+// Also go through and fix gaps, font sizes, paddings, margins, etc, i.e make them responsive
+
+@mixin accountBackground($bgColor) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: $bgColor;
+    height: 227px;
+    border-radius: 5px;
+}
+
+$body-bg-dark: #20222f;
+$body-bg-light: #f7f9ff;
+$card-bg-dark: #252b42;
+$card-bg-light: #f1f3fa;
+$text-LText-dark: #ffffff;
+$text-LText-light: #1d1f29;
+$text-sText-dark: #8c98c6;
+$text-sText-light: #63687d;
+$progress-text-red: #dc414c;
+$progress-text-green: #1eb589;
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 36px 25px;
+}
+
+.body--dark {
+    background-color: $body-bg-dark;
+}
+
+.body--light {
+    background-color: $body-bg-light;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+
+    .heading {
+        display: grid;
+        gap: 4px;
+    
+        &__title {
+            font: 24px BOLD;
+        }
+    
+        &__title--dark{
+            color: $text-LText-dark;
+        }
+    
+        &__title--light {
+            color: $text-LText-light;
+        }
+    
+        &__text {
+            font: 14px BOLD;
+        }
+    
+        &__text--dark {
+            color: $text-sText-dark;
+        }
+    
+        &__text--light {
+            color: $text-sText-light;
+        }
+    }
+
+    .line__division {
+        width: 100%;
+        height: 1px;
+    }
+
+    .line__division--dark {
+        background-color: #333a55;
+    }
+
+    .line__division--light {
+        background-color: #848bab;
+    }
+
+    .theme {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__name {
+            font: 14px BOLD;
+        }
+
+        &__name--dark {
+            color: $text-sText-dark;
+        }
+
+        &__name--light {
+            color: $text-sText-light;
+        }
+
+        &__switcher {
+            width: 48px;
+            height: 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+
+            input {
+                position: absolute;
+                z-index: -2;
+                top: 10px;
+                left: 50%;
+            }
+
+            input:focus + span {
+                outline: 1px solid blue;
+            }
+
+            input:checked + span {
+                background: #aeb3cb;
+            }
+             
+            input:checked + span::before {
+                background-color: #ffffff;
+                transform: translateX(24px);
+            }
+
+            span {
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                position: relative;
+                display: block;
+                background: linear-gradient(#40d882, #388fe7);
+            }
+
+            span::before {
+                content: '';
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                position: absolute;
+                background-color: #252b42;
+                z-index: 2;
+                left: 3px;
+                top: 3px;
+                transition: .3s;
+            }
+        }
+    }
+}
+
+main {
+    display: grid;
+    gap: 46px;
+}
+
+// Remember to change gap on account grid in media query
+
+.account__section {
+    display: grid;
+    gap: 24px;
+}
+
+.account {
+    display: grid;
+    justify-content: center;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 28px 0 24px 0;
+    text-align: center;
+
+    &__username {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 28px;
+        
+        span {
+            font: 12px BOLD;
+        }
+    }
+
+    &__value {
+        font: 56px BOLD;
+    }
+
+    &__logo {
+        font: 12px REGULAR;
+        letter-spacing: 5px;
+        margin-bottom: 25px;
+    }
+
+}
+
+.account--dark {
+    background-color: $card-bg-dark;
+
+    .account__username--dark {
+        color: $text-sText-dark;
+    }
+
+    .account__value--dark {
+        color: $text-LText-dark;
+    }
+
+    .account__logo--dark {
+        color: $text-sText-dark;
+    }
+}
+
+.account--light {
+    background-color: $card-bg-light;
+
+    .account__username--light {
+        color: $text-sText-light;
+    }
+
+    .account__value--light {
+        color: $text-LText-light;
+    }
+
+    .account__logo--light {
+        color: $text-sText-light;
+    }
+}
+
+.account--facebook {
+    @include accountBackground(#1da1f2);
+}
+
+.account--twitter {
+    @include accountBackground(#1da1f2);
+}
+
+.account--instagram {
+    @include accountBackground(linear-gradient(90deg, #df4896 0%, #ee877e 51%, #fdc366 100%));
+}
+
+.account--youtube {
+    @include accountBackground(#c4032b);
+}
+
+.performance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font: 12px BOLD;
+}
+
+.performance--green {
+    color: $progress-text-green;
+}
+
+.performance--red {
+    color: $progress-text-red;
+}
+
+.stat__section {
+    margin-bottom: 24px;
+}
+
+.stat__heading {
+    font: 24px BOLD;
+    margin-bottom: 27px;
+}
+
+.stat__heading--dark {
+    color: $text-LText-dark;
+}
+
+.stat__heading--light {
+    color: $text-LText-light;
+}
+
+.stat__grid {
+    display: grid;
+    gap: 16px;
+}
+
+.stat {
+    padding: 24px;
+    border-radius: 5px;
+    display: grid;
+    gap: 21px;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font: 14px BOLD;
+    }
+
+    &__value {
+        font: 32px BOLD;
+    }
+}
+
+.stat--dark {
+    background-color: $card-bg-dark;
+
+    .stat__title--dark {
+        color: $text-sText-dark;
+    }
+
+    .stat__value--dark {
+        color: $text-LText-dark;
+    }
+}
+
+.stat--light {
+    background-color: $card-bg-light;
+
+    .stat__title--light {
+        color: $text-sText-light;
+    }
+
+    .stat__value--light {
+        color: $text-LText-light;
+    }
+}
